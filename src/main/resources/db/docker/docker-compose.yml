@@ -1,0 +1,17 @@
+
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: testUser
+      POSTGRES_PASSWORD: testPW
+      POSTGRES_DB: recipedb
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:

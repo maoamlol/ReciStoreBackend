@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/recipedb
+    username: testUser
+    password: testPW
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  liquibase:
+    change-log: classpath:db/changelog/liquibase_recipe_changelog.xml
+    enabled: true
+
+logging:
+  level:
+    liquibase: info  # You can set this to 'debug' for more detailed logs
